@@ -9,6 +9,7 @@ user = os.environ['USER']
 scratch_root = '/uscmst1b_scratch/lpc1/3DayLifetime/' + user
 itch_root = os.path.join(scratch_root, 'itch')
 itch_fn = os.path.expanduser('~/.itch.txt')
+log_fn = os.path.expanduser('~/.itch.log')
 
 def popen(cmd, shell=False):
     if type(cmd) == str:
@@ -65,7 +66,7 @@ def install():
     crontab = crontab.strip()
     if crontab:
         crontab = '\n'.join(x.strip() for x in crontab.split('\n') if x.strip()) + '\n'
-    crontab += '@daily %s scratch\n' % script_path
+    crontab += '@daily %s scratch > %s\n' % (script_path, log_path)
 
     p = popen('crontab -')
     p.stdin.write(crontab)
