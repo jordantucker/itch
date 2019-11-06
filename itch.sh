@@ -3,7 +3,6 @@
 SCRATCH_ROOT=/uscmst1b_scratch/lpc1/3DayLifetime/$USER/itch
 SCRATCH_LOG=~/.itch.log
 
-rm ${SCRATCH_LOG}
 mv ${SCRATCH_LOG} ${SCRATCH_LOG}.last
 touch ${SCRATCH_LOG}
 
