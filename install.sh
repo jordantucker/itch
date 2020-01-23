@@ -1,7 +1,7 @@
 #!/bin/bash
 
 script_name=itch.sh
-script_fn=/uscms/home/tucker/itch/$script_name
+script_fn=/uscms/home/$USER/itch/$script_name
 crontab_time="@daily"
 
 ########################################################################
