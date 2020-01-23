@@ -27,3 +27,5 @@ echo crontab is now:
 crontab -l
 
 rm $tmp_fn
+
+touch ~/.itch.log
