@@ -12,5 +12,5 @@ while IFS= read -r -d '' fn; do
     echo "$(stat --format=%15s "$fn")" "$fn" >> ${SCRATCH_LOG}
 done
 
-echo scratch from $(hostname) at $(date)
-diff ${SCRATCH_LOG}.last ${SCRATCH_LOG}
+echo scratch from $(hostname) at $(date) '<br>'
+diff -q ${SCRATCH_LOG}.last ${SCRATCH_LOG}
